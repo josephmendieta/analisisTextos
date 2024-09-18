@@ -1,30 +1,42 @@
 # Proyecto de Análisis de Sentimientos
 
-Este proyecto consiste en una aplicación web para el análisis de sentimientos utilizando FastAPI y el modelo preentrenado nlptown/bert-base-multilingual-uncased-sentiment de Hugging Face Transformers. La aplicación evalúa el sentimiento de texto ingresado y comentarios extraídos de Reddit, clasificándolos como positivos, negativos o neutrales.
+Este proyecto consiste en una aplicación web para el análisis de sentimientos utilizando FastAPI y el modelo preentrenado `nlptown/bert-base-multilingual-uncased-sentiment` de Hugging Face Transformers. La aplicación evalúa el sentimiento de texto ingresado y comentarios extraídos de Reddit, clasificándolos como positivos, negativos o neutrales.
+
+## Características
+
+- Análisis de sentimientos de textos ingresados.
+- Recuperación y análisis de comentarios de Reddit.
+- Filtrado de resultados basado en umbrales de sentimiento.
 
 ## Instalación
 
-1. Clona este repositorio en tu máquina local.
-2. Instala las dependencias del proyecto utilizando el archivo `requirements.txt`:
+1. Clona este repositorio en tu máquina local:
 
+   ```bash
+   git clone https://github.com/usuario/nombre-del-repo.git
+   cd nombre-del-repo
+   
+2. Instala las dependencias del proyecto utilizando el archivo requirements.txt:
+pip install -r requirements.txt
+
+## Asegúrate de tener instalado PyTorch o TensorFlow según prefieras:
+
+Para instalar PyTorch, sigue las instrucciones en pytorch.org.
+Para instalar TensorFlow, sigue las instrucciones en tensorflow.org.
 
 ## Uso
 
-1. Ejecuta la aplicación con el siguiente comando:
-
-
-2. Accede a la interfaz de usuario en tu navegador web ingresando la dirección [http://localhost:8000](http://localhost:8000).
+Ejecuta la aplicación con el siguiente comando: python -m uvicorn main:app --reload
+ 
+Accede a la interfaz de usuario en tu navegador web ingresando la dirección http://localhost:8000. La documentación interactiva de la API está disponible en http://localhost:8000/docs.
 
 ## Créditos
-
-- FastAPI: [Documentación](https://fastapi.tiangolo.com/)
-- Modelo preentrenado de Hugging Face Transformers: [nlptown/bert-base-multilingual-uncased-sentiment](https://huggingface.co/nlptown/bert-base-multilingual-uncased-sentiment)
-- Google Colab para pruebas y desarrollo: [Colab Notebook](https://colab.research.google.com/drive/1AJ3s7KGfmnYKNIqSOqRWH7DrrdK4YI3c#scrollTo=NZR-bLaEY-qP)
+- FastAPI: Documentación
+- Modelo preentrenado de Hugging Face Transformers: nlptown/bert-base-multilingual-uncased-sentiment
+- Google Colab para pruebas y desarrollo: Colab Notebook
 
 ## Contribuciones
-
 Las contribuciones son bienvenidas. Si deseas mejorar este proyecto, no dudes en enviar un pull request.
 
 ## Licencia
-
-Este proyecto está bajo la Licencia MIT. Consulta el archivo LICENSE.md para obtener más detalles.
+Este proyecto está bajo la Licencia MIT. Consulta el archivo LICENSE para obtener más detalles.
