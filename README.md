@@ -13,11 +13,15 @@ Este proyecto consiste en una aplicación web para el análisis de sentimientos 
 1. Clona este repositorio en tu máquina local:
 
    ```bash
-   git clone https://github.com/usuario/nombre-del-repo.git
-   cd nombre-del-repo
+   git clone https://github.com/josephmendieta/analisisTextos.git
+   cd analisisTextos
    
 2. Instala las dependencias del proyecto utilizando el archivo requirements.txt:
 pip install -r requirements.txt
+
+3. En caso de aún generar errores, en la terminal del equipo cliente ejecutar:
+pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu118
+
 
 ## Asegúrate de tener instalado PyTorch o TensorFlow según prefieras:
 
