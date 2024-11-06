@@ -4,3 +4,10 @@ transformers
 requests
 torch
 tensorflow
+pydantic
+httpx
+beautifulsoup4
+pandas
+scikit-learn
+emoji
+jinja2

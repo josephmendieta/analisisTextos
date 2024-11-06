@@ -7,7 +7,7 @@
     <link rel="icon" href="https://favicon.io/emoji-favicons/smile.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
-          body {
+        body {
             font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
@@ -113,11 +113,16 @@
         </button>
         <div id="loading" class="loading">Cargando...</div>
         <div id="result" class="result"></div>
-        <div id="redditResult" class="result"></div> <!-- Nuevo contenedor para resultados de Reddit -->
+        <div id="redditResult" class="result"></div> <!-- Contenedor de resultados de Reddit -->
     </div>
     <script>
         document.getElementById('analyzeButton').addEventListener('click', function() {
             var texto = document.getElementById('inputText').value;
+            if (!texto.trim()) {
+                alert("Por favor, ingresa un texto para analizar.");
+                return;
+            }
+            document.getElementById('loading').classList.add('active');
             fetch('/analisisTexto?texto=' + encodeURIComponent(texto))
                 .then(response => response.json())
                 .then(data => {
@@ -126,12 +131,19 @@
                 .catch(error => {
                     console.error('Error:', error);
                     document.getElementById('result').innerText = 'Ocurrió un error al realizar el análisis de sentimientos. Por favor, inténtalo de nuevo más tarde.';
+                })
+                .finally(() => {
+                    document.getElementById('loading').classList.remove('active');
                 });
         });
     
         document.getElementById('analyzeRedditButton').addEventListener('click', function() {
             var subreddit = document.getElementById('redditSub').value;
-            document.getElementById('loading').classList.add('active'); // Mostrar mensaje de cargando
+            if (!subreddit.trim()) {
+                alert("Por favor, ingresa un nombre de subreddit.");
+                return;
+            }
+            document.getElementById('loading').classList.add('active');
             fetch('/analizarComentariosReddit?subreddit=' + encodeURIComponent(subreddit))
                 .then(response => response.json())
                 .then(data => {
@@ -139,10 +151,10 @@
                 })
                 .catch(error => {
                     console.error('Error:', error);
-                    document.getElementById('result').innerText = 'Ocurrió un error al realizar el análisis de comentarios de Reddit. Por favor, inténtalo de nuevo más tarde.';
+                    document.getElementById('redditResult').innerText = 'Ocurrió un error al realizar el análisis de comentarios de Reddit. Por favor, inténtalo de nuevo más tarde.';
                 })
                 .finally(() => {
-                    document.getElementById('loading').classList.remove('active'); // Ocultar mensaje de cargando
+                    document.getElementById('loading').classList.remove('active');
                 });
         });
     
