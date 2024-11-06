@@ -17,11 +17,15 @@ Este proyecto consiste en una aplicación web para el análisis de sentimientos 
    cd analisisTextos
    
 2. Instala las dependencias del proyecto utilizando el archivo requirements.txt:
+```bash
 pip install -r requirements.txt
+```
 
 3. En caso de aún generar errores, en la terminal del equipo cliente ejecutar:
-pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu118
 
+```bash
+pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu118
+```
 
 ## Asegúrate de tener instalado PyTorch o TensorFlow según prefieras:
 
