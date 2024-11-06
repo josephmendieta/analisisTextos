@@ -34,7 +34,11 @@ Para instalar TensorFlow, sigue las instrucciones en tensorflow.org.
 
 ## Uso
 
-Ejecuta la aplicación con el siguiente comando: python -m uvicorn main:app --reload
+Ejecuta la aplicación con el siguiente comando: 
+
+```bash
+python -m uvicorn main:app --reload
+```
  
 Accede a la interfaz de usuario en tu navegador web ingresando la dirección http://localhost:8000. La documentación interactiva de la API está disponible en http://localhost:8000/docs.
 
